@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
 
 interface IEnv {
     mode: 'development' | 'production'
@@ -12,7 +13,7 @@ export default (env: IEnv) => {
 
     const config: webpack.Configuration = {
         mode: 'development',
-        entry: path.resolve(__dirname, 'src', 'index.ts'),
+        entry: path.resolve(__dirname, 'src', 'index.tsx'),
         output: {
             path: path.resolve(__dirname, 'build'),
             filename: '[name].[contenthash:8].js',
@@ -36,7 +37,11 @@ export default (env: IEnv) => {
                 template: path.resolve(__dirname, 'public', 'index.html'),
             }),
             new webpack.ProgressPlugin()
-        ]
+        ],
+        devServer: {
+            port: 3000,
+            open: true
+        }
     }
 
     return config
