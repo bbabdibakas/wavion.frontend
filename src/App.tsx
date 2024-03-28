@@ -1,4 +1,8 @@
+import { Link, Route, Routes } from 'react-router-dom'
 import cls from './App.module.scss'
+import MainPage from './pages/MainPage'
+import ProfilePage from './pages/ProfilePage'
+import NotFoundPage from './pages/NotFoundPage'
 
 const App = () => {
     return (
@@ -8,7 +12,13 @@ const App = () => {
                     Sidemenu
                 </div>
                 <div>
-                    Page
+                    <Link to={'/'}>main</Link>
+                    <Link to={'/profile'}>profile</Link>
+                    <Routes>
+                        <Route path='/' element={<MainPage />} />
+                        <Route path='/profile' element={<ProfilePage />} />
+                        <Route path='/*' element={<NotFoundPage />} />
+                    </Routes>
                 </div>
                 <div>
                     Sidebar

@@ -60,7 +60,8 @@ export default (env: IEnv) => {
         ],
         devServer: {
             port: 3000,
-            open: true
+            open: true,
+            historyApiFallback: true
         }
     }
 
