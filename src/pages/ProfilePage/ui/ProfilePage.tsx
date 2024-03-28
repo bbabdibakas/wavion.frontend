@@ -1,6 +1,10 @@
+import { Navbar } from "widgets/Navbar"
+import cls from './ProfilePage.module.scss'
+
 const ProfilePage = () => {
     return (
-        <div>
+        <div className={cls.ProfilePage}>
+            <Navbar />
             ProfilePage
         </div>
     )

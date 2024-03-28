@@ -2,18 +2,15 @@ import { MainPage } from 'pages/MainPage'
 import { NotFoundPage } from 'pages/NotFoundPage'
 import { ProfilePage } from 'pages/ProfilePage'
 import { Suspense } from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
+import { Sidemenu } from 'widgets/Sidemenu'
 
 const App = () => {
     return (
         <div className='app'>
             <div className="wrapper">
-                <div>
-                    Sidemenu
-                </div>
-                <div>
-                    <Link to={'/'}>main</Link>
-                    <Link to={'/profile'}>profile</Link>
+                <Sidemenu />
+                <div className='content'>
                     <Suspense fallback={'Loading...'}>
                         <Routes>
                             <Route path='/' element={<MainPage />} />
@@ -21,9 +18,6 @@ const App = () => {
                             <Route path='/*' element={<NotFoundPage />} />
                         </Routes>
                     </Suspense>
-                </div>
-                <div>
-                    Sidebar
                 </div>
             </div>
         </div>

@@ -1,8 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import './variables/global.scss';
+@import './reset.scss';
 
 .app {
     height: 100vh;
@@ -15,8 +12,13 @@
 
 .wrapper {
     display: flex;
-    justify-content: space-between;
     height: 100vh;
     width: 1280px;
     background: red;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
 }
