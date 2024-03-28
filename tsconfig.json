@@ -9,7 +9,13 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "./src/*"
+            ]
+        },
     },
     "ts-node": {
         "compilerOptions": {

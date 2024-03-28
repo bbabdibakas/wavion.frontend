@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background: black;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    width: 1280px;
+    background: red;
+}
